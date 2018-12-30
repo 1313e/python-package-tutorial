@@ -3,7 +3,7 @@ How does importing in Python works?
 
 Importing Python modules/packages
 ---------------------------------
-When executing the following::
+When executing the following
 
 	>>> import testpy
 
@@ -56,12 +56,12 @@ What this means is that if an imported package does not import a submodule/subpa
 Importing this submodule/subpackage using this method will make it accessible.
 
 The ``testpy`` package has a file called ``test.py`` (same file as the ``__init__.py`` file), which is not imported automatically.
-It can be imported however with::
+It can be imported however with:
 
 	>>> from testpy import test
 
 This will bind it to the ``testpy`` namespace as well, even though it has not been imported explicitly.
-One can check this by comparing the outputs of the following two snippets::
+One can check this by comparing the outputs of the following two snippets:
 
 	>>> import testpy
 	>>> dir(testpy)
@@ -73,7 +73,7 @@ and
 	>>> dir(testpy)
 
 The latter snippet will show that the ``test`` submodule is available, while the first does not (``dir()`` shows a list of everything bound to the provided namespace).
-Note that the ``test`` submodule can also be bound to the ``testpy`` namespace with::
+Note that the ``test`` submodule can also be bound to the ``testpy`` namespace with:
 
 	>>> import testpy
 	>>> import testpy.test
