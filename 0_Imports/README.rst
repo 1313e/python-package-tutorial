@@ -12,8 +12,8 @@ This is done in the following order (if more than one case applies, the first va
 
 - If the current working directory contains an *importable* directory named ``testpy``, it is imported;
 - Else, if the current working directory contains a Python file named ``testpy.py``, it is imported;
-- If neither of these apply, Python will search the system PATH-variable for a package named ``testpy``.
-  If the package is a directory (not a file), its name can be different from ``testpy`` as long as it is registered with the correct namespace;
+- If neither of these apply, Python will search the system PATH-variable for a module/package named ``testpy``.
+  If it is a package (directory, not file), its name can be different from ``testpy`` as long as it is registered with the correct namespace;
 - If this fails as well, an ``ImportError`` is raised.
 
 Try changing the names of the ``testpy.py`` file and/or the ``testpy`` directory to the name of an installed package to see this in action.
@@ -36,11 +36,11 @@ It is also possible to import something from a Python module/package with::
 
 	>>> from testpy import fib_arr
 
-Here, Python attempts to import a definition/module/package called ``fib_arr`` from a Python module/package called ``testpy``.
+Here, Python attempts to import an object (anything that can be represented in Python) called ``fib_arr`` from a Python module/package called ``testpy``.
 Determining where ``fib_arr`` is imported from is done in the same way as before, but the namespace itself is not explicitly imported.
 If a valid target has been found, then checking for ``fib_arr`` is done in the following order:
 
-- If the ``testpy`` namespace contains a definition/module/package called ``fib_arr``, it is imported;
+- If the ``testpy`` namespace contains an object called ``fib_arr``, it is imported;
 - Else, if the ``testpy`` namespace is a Python package (not module) and contains a submodule/subpackage called ``fib_arr``, it is imported;
 - If both of these fail, an ``ImportError`` is raised.
 
@@ -66,7 +66,7 @@ One can check this by comparing the outputs of the following two snippets::
 	>>> import testpy
 	>>> dir(testpy)
 
-and::
+and
 
 	>>> from testpy import test
 	>>> import testpy
