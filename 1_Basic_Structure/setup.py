@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-PRISM Setup
+TestPy Setup
 ===========
-Contains the setup script required for installing the PRISM package.
+Contains the setup script required for installing the *TestPy* package.
 This can be ran directly by using::
 
     pip install .
@@ -34,31 +34,23 @@ with open('requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
 
 # Get the version
-exec(open('prism/__version__.py', 'r').read())
+exec(open('testpy/__version__.py', 'r').read())
 
 # Setup function declaration
-setup(name='prism',
-      version=prism_version,
+# See https://setuptools.readthedocs.io/en/latest/setuptools.html
+setup(name='testpy-cas',    # Registered name of package (e.g., on PyPI)
+      version=version,      # Version of this package
       author="Ellert van der Velden",
       author_email="evandervelden@swin.edu.au",
-      maintainer="1313e",
-      description=("PRISM: An alternative to MCMC for rapid analysis of "
-                   "models"),
-      long_description=long_description,
-      download_url="https://pypi.org/project/prism",
-      url="https://github.com/1313e/PRISM",
-      project_urls={
-          'Documentation': "https://prism-tool.readthedocs.io",
-          'Home Page': "https://github.com/1313e/PRISM",
-          'Source Code': "https://github.com/1313e/PRISM"
-          },
-      license='BSD-3',
-      platforms=['Windows', 'Mac OS-X', 'Linux', 'Unix'],
+      maintainer="1313e",   # PyPI username of maintainer(s)
+      description=("TestPy: A tutorial on how to build a Python package"),
+      long_description=long_description,        # Use the README description
+      license='MIT',    # License of this package
+      # List of classifiers (https://pypi.org/pypi?%3Aaction=list_classifiers)
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
-          'Intended Audience :: Science/Research',
-          'License :: OSI Approved :: BSD License',
+          'License :: OSI Approved :: MIT License',
           'Natural Language :: English',
           'Operating System :: MacOS',
           'Operating System :: Microsoft :: Windows',
@@ -70,15 +62,15 @@ setup(name='prism',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6',
           'Programming Language :: Python :: 3.7',
-          'Topic :: Scientific/Engineering',
           'Topic :: Software Development'
           ],
-      keywords=('PRISM prism model analysis emulator regression MCMC '
-                'optimization'),
+      keywords=('testpy'),  # List of keywords
+      # String containing the Python version requirements
       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
       packages=find_packages(),
-      package_dir={'prism': "prism"},
-      include_package_data=True,
-      install_requires=requirements,
-      zip_safe=False,
+      # Registered namespace vs. local directory
+      package_dir={'testpy': "testpy"},
+      include_package_data=True,        # Include non-Python files
+      install_requires=requirements,    # Parse in list of requirements
+      zip_safe=False,                   # Do not zip the installed package
       )

@@ -91,7 +91,10 @@ def fib_arr(index, inclusive=False):
 
     # Initialize Fibonacci array
     array = np.zeros(index, dtype=np.int64)
-    array[1] = 1
+
+    # If index is at least 2, add 1 as well
+    if(index > 1):
+        array[1] = 1
 
     # Loop over all remaining indices and calculate their values
     for i in range(2, index):

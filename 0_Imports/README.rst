@@ -55,10 +55,10 @@ The difference between importing something from a package or accessing it from a
 What this means is that if an imported package does not import a submodule/subpackage in its ``__init__.py`` file, it will not be bound to the namespace and is thus not accessible.
 Importing this submodule/subpackage using this method will make it accessible.
 
-The ``testpy`` package has a file called ``test.py`` (same file as the ``__init__.py`` file), which is not imported automatically.
+The ``testpy`` package has a file called ``fibo.py`` (same file as the ``__init__.py`` file), which is not imported automatically.
 It can be imported however with:
 
-	>>> from testpy import test
+	>>> from testpy import fibo
 
 This will bind it to the ``testpy`` namespace as well, even though it has not been imported explicitly.
 One can check this by comparing the outputs of the following two snippets:
@@ -68,15 +68,15 @@ One can check this by comparing the outputs of the following two snippets:
 
 and
 
-	>>> from testpy import test
+	>>> from testpy import fibo
 	>>> import testpy
 	>>> dir(testpy)
 
-The latter snippet will show that the ``test`` submodule is available, while the first does not (``dir()`` shows a list of everything bound to the provided namespace).
-Note that the ``test`` submodule can also be bound to the ``testpy`` namespace with:
+The latter snippet will show that the ``fibo`` submodule is available, while the first does not (``dir()`` shows a list of everything bound to the provided namespace).
+Note that the ``fibo`` submodule can also be bound to the ``testpy`` namespace with:
 
 	>>> import testpy
-	>>> import testpy.test
+	>>> import testpy.fibo
 
 A few uses of this will be discussed later.
 
