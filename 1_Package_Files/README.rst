@@ -27,7 +27,7 @@ When creating a Python package, the following files are required or highly recom
 - A setup file called ``setup.py``, which describes the process that needs to be executed in order to install the package.
   There are multiple different ways of making one, with the most commonly used method being the 'setup()' function from the ``setuptools`` package.
   This package is now supplied by default in every Python distribution and therefore does not need to be installed manually.
-  See `its documentation<https://setuptools.readthedocs.io/en/latest/setuptools.html>`_ for a full rundown of all the arguments that can be used.
+  See `its documentation`_ for a full rundown of all the arguments that can be used.
   The included ``setup.py`` file shows the default lay-out of a setup-file, but many more arguments can be given.
   Keep in mind that the lay-out would be much different if the Python package requires C-extensions or different installations depending on machine/architecture/etc;
 - And finally, a place to store the version of the package.
@@ -48,3 +48,4 @@ This returns the path to the installed and imported ``__init__.py`` file.
 See next tutorial for the basic layout of the package itself.
 
 .. _badges: https://shields.io/#/
+.. _its documentation: https://setuptools.readthedocs.io/en/latest/setuptools.html
