@@ -14,7 +14,7 @@ When creating a Python package, the following files are required or highly recom
   It supports the use of wildcards ('*') and recursive includes ('recursive-include');
 - A readme file, which can be written in ReStructured Text (``README.RST``) or MarkDown (``README.MD``), with RST being more versatile.
   This file should give a detailed description of the package, including what it is for, how to install it, basic ways of using it and more.
-  It is also fairly common to use badges at the top of the readme file (see https://shields.io/#/) that give a status overview of the package (e.g., supported Python versions, latest released version, license, CI status).
+  It is also fairly common to use `badges`_ at the top of the readme file that give a status overview of the package (e.g., supported Python versions, latest released version, license, CI status).
   This file can also be used as the 'long_description' in the ``setup.py`` file, which allow it to show up on PyPI.
   Note that this is written in a readme file and therefore theoretically speaking incorrect;
 - A ``requirements.txt`` file, listing all the Python package requirements of this package.
@@ -27,7 +27,7 @@ When creating a Python package, the following files are required or highly recom
 - A setup file called ``setup.py``, which describes the process that needs to be executed in order to install the package.
   There are multiple different ways of making one, with the most commonly used method being the 'setup()' function from the ``setuptools`` package.
   This package is now supplied by default in every Python distribution and therefore does not need to be installed manually.
-  See https://setuptools.readthedocs.io/en/latest/setuptools.html for a full rundown of all the arguments that can be used.
+  See `its documentation`<https://setuptools.readthedocs.io/en/latest/setuptools.html> for a full rundown of all the arguments that can be used.
   The included ``setup.py`` file shows the default lay-out of a setup-file, but many more arguments can be given.
   Keep in mind that the lay-out would be much different if the Python package requires C-extensions or different installations depending on machine/architecture/etc;
 - And finally, a place to store the version of the package.
@@ -46,3 +46,5 @@ The location of an installed package can be found easily by importing it and exe
 This returns the path to the installed and imported ``__init__.py`` file.
 
 See next tutorial for the basic layout of the package itself.
+
+.. _badges: https://shields.io/#/
