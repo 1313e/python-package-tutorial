@@ -5,7 +5,8 @@ Many of the descriptions that are given come from my own personal experience in 
 Therefore, they are in no way guaranteed to be the best way of doing certain things, but what I figured is the easiest way.
 
 I also highly recommend using the `Spyder`_ editor when making packages, since it has many features that make it much easier to keep everything ordered and structured.
-For the same reason, using Anaconda and setting up different environments (like, a development and a testing environment) make it easier to keep package building separated from your usual work.
+For the same reason, using `Anaconda`_ and setting up different environments (like, a development and a testing environment) make it easier to keep package building separated from your usual work.
 This also means, that I refuse to use Jupyter notebooks in this repo, as they are by far the worst way of using Python ever.
 
-.. _Spyder: https://pythonhosted.org/spyder/installation.html
+.. _Spyder: https://www.spyder-ide.org
+.. _Anaconda: https://www.anaconda.com
