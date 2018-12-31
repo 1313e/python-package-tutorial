@@ -15,7 +15,7 @@ from __future__ import absolute_import, division, print_function
 # Package imports
 import numpy as np
 
-# All declaration (only import these definitions with "from testpy import *")
+# All declaration (only import these defs with "from testpy.fibo import *")
 __all__ = ['fib_arr', 'fib_val']
 
 

@@ -14,7 +14,7 @@ or anything equivalent.
 
 
 # %% IMPORTS
-# Future imports
+# Future imports (only required if py2/py3 compatible)
 from __future__ import absolute_import, with_statement
 
 # Built-in imports
@@ -29,16 +29,18 @@ from setuptools import find_packages, setup
 with open('README.rst', 'r') as f:
     long_description = f.read()
 
-# Get the requirements list
+# Get the requirements list by reading the file and splitting it up
 with open('requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
 
-# Get the version
+# Get the version from the __version__.py file
+# This is done in this way to make sure it is stored in a single place and
+# does not require the package to be installed already.
 exec(open('testpy/__version__.py', 'r').read())
 
 # Setup function declaration
 # See https://setuptools.readthedocs.io/en/latest/setuptools.html
-setup(name='testpy-cas',    # Registered name of package (e.g., on PyPI)
+setup(name='testpy-cas',    # Distribution name of package (e.g., used on PyPI)
       version=version,      # Version of this package
       author="Ellert van der Velden",
       author_email="evandervelden@swin.edu.au",
