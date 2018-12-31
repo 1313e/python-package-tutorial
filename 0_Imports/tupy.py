@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy
-======
+TuPy
+====
 A tutorial on how to build a Python package.
 
 """
@@ -15,7 +15,7 @@ from __future__ import absolute_import, division, print_function
 # Package imports
 import numpy as np
 
-# All declaration (only import these definitions with "from testpy import *")
+# All declaration (only import these definitions with "from tupy import *")
 __all__ = ['fib_arr', 'fib_val']
 
 
@@ -106,7 +106,7 @@ def fib_arr(index, inclusive=False):
 
 # %% EXECUTION
 # The code below is only executed if the file itself is executed with
-# "$ python __init__.py" or "exec(open('__init__.py', 'r').read())".
+# "$ python tupy.py" or "exec(open('tupy.py', 'r').read())".
 # It is ignored if the file is imported by an other script.
 if(__name__ == '__main__'):
     print("The Fibonacci number at index 6 is %i." % (fib_val(6)))

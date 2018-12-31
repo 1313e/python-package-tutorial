@@ -1,5 +1,5 @@
-TestPy: A tutorial on how to build a Python package
-===================================================
+TuPy: A tutorial on how to build a Python package
+=================================================
 This repo contains several tutorials/descriptions on how to build a Python package.
 Many of the descriptions that are given come from my own personal experience in building several Python packages.
 Therefore, they are in no way guaranteed to be the best way of doing certain things, but what I figured is the easiest way.

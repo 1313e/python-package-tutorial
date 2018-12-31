@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy Version
-=============
-Stores the different versions of the *TestPy* package.
+TuPy Version
+============
+Stores the different versions of the *TuPy* package.
 
 """
 

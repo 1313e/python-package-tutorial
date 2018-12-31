@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy Setup
-===========
-Contains the setup script required for installing the *TestPy* package.
+TuPy Setup
+==========
+Contains the setup script required for installing the *TuPy* package.
 This can be ran directly by using::
 
     pip install .
@@ -36,16 +36,16 @@ with open('requirements.txt', 'r') as f:
 # Get the version from the __version__.py file
 # This is done in this way to make sure it is stored in a single place and
 # does not require the package to be installed already.
-exec(open('testpy/__version__.py', 'r').read())
+exec(open('tupy/__version__.py', 'r').read())
 
 # Setup function declaration
 # See https://setuptools.readthedocs.io/en/latest/setuptools.html
-setup(name='testpy-cas',    # Distribution name of package (e.g., used on PyPI)
+setup(name='tupy-cas',    # Distribution name of package (e.g., used on PyPI)
       version=version,      # Version of this package
       author="Ellert van der Velden",
       author_email="evandervelden@swin.edu.au",
       maintainer="1313e",   # PyPI username of maintainer(s)
-      description=("TestPy: A tutorial on how to build a Python package"),
+      description=("TuPy: A tutorial on how to build a Python package"),
       long_description=long_description,        # Use the README description
       license='MIT',    # License of this package
       # List of classifiers (https://pypi.org/pypi?%3Aaction=list_classifiers)
@@ -66,12 +66,12 @@ setup(name='testpy-cas',    # Distribution name of package (e.g., used on PyPI)
           'Programming Language :: Python :: 3.7',
           'Topic :: Software Development'
           ],
-      keywords=('testpy'),  # List of keywords
+      keywords=('tupy'),  # List of keywords
       # String containing the Python version requirements
       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
       packages=find_packages(),
       # Registered namespace vs. local directory
-      package_dir={'testpy': "testpy"},
+      package_dir={'tupy': "tupy"},
       include_package_data=True,        # Include non-Python files
       install_requires=requirements,    # Parse in list of requirements
       zip_safe=False,                   # Do not zip the installed package

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy
-======
+TuPy
+====
 A tutorial on how to build a Python package.
 
 """
@@ -16,10 +16,10 @@ from __future__ import absolute_import, division, print_function
 from .__version__ import version as __version__
 from . import fibo
 
-# All declaration (only import these definitions with "from testpy import *")
+# All declaration (only import these definitions with "from tupy import *")
 __all__ = ['fibo']
 
-# If everything from fibo must be bound to testpy in addition to testpy.fibo,
+# If everything from fibo must be bound to tupy in addition to tupy.fibo,
 # add the following lines
 #from .fibo import *
 #__all__.extend(fibo)

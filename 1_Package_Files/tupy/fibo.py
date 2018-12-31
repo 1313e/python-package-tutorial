@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy
-======
-A tutorial on how to build a Python package.
+Fibo
+====
+A collection of different functions that calculate the Fibonacci sequence.
 
 """
 
@@ -15,7 +15,7 @@ from __future__ import absolute_import, division, print_function
 # Package imports
 import numpy as np
 
-# All declaration (only import these defs with "from testpy.fibo import *")
+# All declaration (only import these defs with "from tupy.fibo import *")
 __all__ = ['fib_arr', 'fib_val']
 
 

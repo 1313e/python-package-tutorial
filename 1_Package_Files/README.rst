@@ -1,5 +1,5 @@
-Required file in a Python package
-=================================
+Required files in a Python package
+==================================
 When creating a Python package, the following files are required or highly recommended:
 
 - A directory containing the actual package.
@@ -32,7 +32,7 @@ When creating a Python package, the following files are required or highly recom
   Keep in mind that the lay-out would be much different if the Python package requires C-extensions or different installations depending on machine/architecture/etc;
 - And finally, a place to store the version of the package.
   There are also many different ways to store this (and only storing it once).
-  I personally prefer to create a ``__version__.py`` file inside the package directory (so, ``testpy/__version__.py``) and executing this file inside the ``setup.py`` file.
+  I personally prefer to create a ``__version__.py`` file inside the package directory (so, ``tupy/__version__.py``) and executing this file inside the ``setup.py`` file.
   This allows the version to be read without requiring the package to be installed, while it can also be read in by the ``__init__.py`` file as the ``__version__`` property.
   This then automatically hides the actual file from the user.
 
@@ -40,8 +40,8 @@ If all of these files are present, and the package directory itself contains an 
 Try playing around a bit with the settings in the ``setup.py`` file and reinstall the package to see the changes.
 The location of an installed package can be found easily by importing it and executing the following:
 
-	>>> import testpy
-	>>> testpy.__file__
+	>>> import tupy
+	>>> tupy.__file__
 
 This returns the path to the installed and imported ``__init__.py`` file.
 

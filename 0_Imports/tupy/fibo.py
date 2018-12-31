@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-TestPy
-======
-A tutorial on how to build a Python package.
+Fibo
+====
+A collection of different functions that calculate the Fibonacci sequence.
 
 """
 
@@ -15,7 +15,7 @@ from __future__ import absolute_import, division, print_function
 # Package imports
 import numpy as np
 
-# All declaration (only import these definitions with "from testpy import *")
+# All declaration (only import these defs with "from tupy.fibo import *")
 __all__ = ['fib_arr', 'fib_val']
 
 
@@ -106,7 +106,7 @@ def fib_arr(index, inclusive=False):
 
 # %% EXECUTION
 # The code below is only executed if the file itself is executed with
-# "$ python testpy.py" or "exec(open('testpy.py', 'r').read())".
+# "$ python fibo.py" or "exec(open('fibo.py', 'r').read())".
 # It is ignored if the file is imported by an other script.
 if(__name__ == '__main__'):
     print("The Fibonacci number at index 6 is %i." % (fib_val(6)))
