@@ -35,6 +35,15 @@ def fib_val(index):
     value : int
         Fibonacci value at given `index`.
 
+    Example
+    -------
+    >>> fib_val(6)
+    8
+
+    See also
+    --------
+    - :func:`~fib_arr`: Returns Fibonacci numbers up to given `index`.
+
     """
 
     # Check if index is non-negative
@@ -78,6 +87,23 @@ def fib_arr(index, inclusive=False):
     -------
     array : :obj:`~numpy.ndarray` object of 64-bit ints
         Array of Fibonacci numbers up to given `index`.
+
+    Examples
+    --------
+    Requesting all Fibonacci numbers up to index 7:
+
+            >>> fib_arr(7)
+            array([0, 1, 1, 2, 3, 5, 8], dtype=int64)
+
+
+    Requesting all Fibonacci numbers up to and including 7:
+
+            >>> fib_arr(7, inclusive=True)
+            array([ 0,  1,  1,  2,  3,  5,  8, 13], dtype=int64)
+
+    See also
+    --------
+    - :func:`~fib_val`: Returns Fibonacci number at given `index`.
 
     """
 

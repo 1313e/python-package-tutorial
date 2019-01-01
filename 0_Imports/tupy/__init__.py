@@ -76,7 +76,7 @@ def fib_arr(index, inclusive=False):
 
     Returns
     -------
-    array : :obj:`~numpy.ndarray` object of ints
+    array : :obj:`~numpy.ndarray` object of 64-bit ints
         Array of Fibonacci numbers up to given `index`.
 
     """

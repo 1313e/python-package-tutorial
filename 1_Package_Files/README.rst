@@ -12,14 +12,16 @@ When creating a Python package, the following files are required or highly recom
   By default, one should put the license, readme and requirements files in here.
   If the package comes with any data files, they should be listed here.
   It supports the use of wildcards ('*') and recursive includes ('recursive-include');
-- A readme file, which can be written in ReStructured Text (``README.RST``) or MarkDown (``README.MD``), with RST being more versatile.
+- A readme file, which can be written in ReStructured Text (``README.rst``) or MarkDown (``README.md``), with RST being more versatile.
   This file should give a detailed description of the package, including what it is for, how to install it, basic ways of using it and more.
   It is also fairly common to use `badges`_ at the top of the readme file that give a status overview of the package (e.g., supported Python versions, latest released version, license, CI status).
   This file can also be used as the 'long_description' in the ``setup.py`` file, which allow it to show up on PyPI.
   Note that this is written in a readme file and therefore theoretically speaking incorrect;
 - A ``requirements.txt`` file, listing all the Python package requirements of this package.
   There are many different ways of listing them, but this is by far the easiest and most common way, since it can be imported into the ``setup.py`` file.
-  Every requirement should be put on a separate line, using no spaces anywhere;
+  Every requirement should be put on a separate line, using no spaces anywhere (see PEP 440).
+  It is advised to always put ALL requirements for your package in here, even if one requirement is fullfilled by the other (e.g., ``astropy`` requires ``numpy`` and is therefore installed regardless of your package listing it as a requirement).
+  This makes a package more future-proof;
 - A setup configuration file called ``setup.cfg``.
   This file contains several configuration settings for specific actions, like creating a distribution, performing pytests and more.
   If your package is to be built and distributed in the same way (independent of OS or compatible Python version), use the file included here.
