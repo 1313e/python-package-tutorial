@@ -12,7 +12,7 @@ A tutorial on how to build a Python package.
 # Future imports (only required if py2/py3 compatible)
 from __future__ import absolute_import, division, print_function
 
-# TestPy imports
+# TuPy imports
 from .__version__ import version as __version__
 from . import fibo
 
@@ -20,9 +20,12 @@ from . import fibo
 __all__ = ['fibo']
 
 # If everything from fibo must be bound to tupy in addition to tupy.fibo,
-# add the following lines
+# uncomment the following line
 #from .fibo import *
-#__all__.extend(fibo)
+
+# If everything from fibo must also be imported with "from tupy import *",
+# uncomment the following line in addition to "from .fibo import *" above
+#__all__.extend(fibo.__all__)
 
 # Author declaration (optional)
 __author__ = "Ellert van der Velden (@1313e)"

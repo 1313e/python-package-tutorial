@@ -92,14 +92,14 @@ def fib_arr(index, inclusive=False):
     --------
     Requesting all Fibonacci numbers up to index 7:
 
-            >>> fib_arr(7)
-            array([0, 1, 1, 2, 3, 5, 8], dtype=int64)
+        >>> fib_arr(7)
+        array([0, 1, 1, 2, 3, 5, 8], dtype=int64)
 
 
     Requesting all Fibonacci numbers up to and including 7:
 
-            >>> fib_arr(7, inclusive=True)
-            array([ 0,  1,  1,  2,  3,  5,  8, 13], dtype=int64)
+        >>> fib_arr(7, inclusive=True)
+        array([ 0,  1,  1,  2,  3,  5,  8, 13], dtype=int64)
 
     See also
     --------

@@ -36,18 +36,20 @@ with open('requirements.txt', 'r') as f:
 # Get the version from the __version__.py file
 # This is done in this way to make sure it is stored in a single place and
 # does not require the package to be installed already.
-exec(open('tupy/__version__.py', 'r').read())
+version = None
+with open('tupy/__version__.py', 'r') as f:
+    exec(f.read())
 
 # Setup function declaration
 # See https://setuptools.readthedocs.io/en/latest/setuptools.html
-setup(name='tupy-cas',    # Distribution name of package (e.g., used on PyPI)
+setup(name='tupy-cas',      # Distribution name of package (e.g., used on PyPI)
       version=version,      # Version of this package (see PEP 440)
       author="Ellert van der Velden",
       author_email="evandervelden@swin.edu.au",
       maintainer="1313e",   # PyPI username of maintainer(s)
       description=("TuPy: A tutorial on how to build a Python package"),
       long_description=long_description,        # Use the README description
-      license='MIT',    # License of this package
+      license='MIT',        # License of this package
       # List of classifiers (https://pypi.org/pypi?%3Aaction=list_classifiers)
       classifiers=[
           'Development Status :: 5 - Production/Stable',
@@ -66,7 +68,7 @@ setup(name='tupy-cas',    # Distribution name of package (e.g., used on PyPI)
           'Programming Language :: Python :: 3.7',
           'Topic :: Software Development'
           ],
-      keywords=('tupy'),  # List of keywords
+      keywords=('tupy'),    # List of keywords
       # String containing the Python version requirements (see PEP 440)
       python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
       packages=find_packages(),

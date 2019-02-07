@@ -36,7 +36,9 @@ with open('requirements.txt', 'r') as f:
 # Get the version from the __version__.py file
 # This is done in this way to make sure it is stored in a single place and
 # does not require the package to be installed already.
-exec(open('tupy/__version__.py', 'r').read())
+version = None
+with open('tupy/__version__.py', 'r') as f:
+    exec(f.read())
 
 # Setup function declaration
 # See https://setuptools.readthedocs.io/en/latest/setuptools.html

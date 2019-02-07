@@ -3,7 +3,7 @@ How does importing in Python works?
 
 Importing Python modules/packages
 ---------------------------------
-When executing the following
+When executing the following:
 
 	>>> import tupy
 
@@ -19,7 +19,7 @@ This is done in the following order (if more than one case applies, the first va
 Try changing the names of the ``tupy.py`` file and/or the ``tupy`` directory to the name of an installed package to see this in action.
 One can check the path to the imported package with ``>>> tupy.__file__``.
 
-When importing a Python file (either a local or registered file), all code inside this file is executed except for code inside an ``if(__name__ == '__main__)'`` statement.
+When importing a Python file (either a local or registered file), all code inside this file is executed except for code inside an ``if(__name__ == '__main__')`` statement.
 All definitions in the file will be bound to the namespace of the file itself (e.g., ``tupy.fib_arr`` and ``tupy.fib_val``).
 However, when importing a directory, it can obviously not be executed.
 Therefore, in order to make a directory *importable*, it must have an ``__init__.py`` file at the root of the directory.
@@ -32,7 +32,7 @@ Try changing the name of the ``tupy/__init__.py`` file to see that the local dir
 
 Importing from Python modules/packages
 --------------------------------------
-It is also possible to import something from a Python module/package with::
+It is also possible to import something from a Python module/package with:
 
 	>>> from tupy import fib_arr
 
@@ -78,6 +78,12 @@ Note that the ``fibo`` submodule can also be bound to the ``tupy`` namespace wit
 	>>> import tupy
 	>>> import tupy.fibo
 
+And, in the same manner as before, one could import ``fib_arr`` from ``tupy.fibo`` without explicitly importing either ``tupy`` or ``tupy.fibo``, as long as ``fib_arr`` is importable from ``tupy.fibo``:
+
+    >>> from tupy.fibo import fib_arr
+
+Importing ``tupy`` and using the ``dir()`` function on it would show that the ``fibo`` submodule has been imported.
+
 A few uses of this will be discussed later.
 
-See next tutorial for the basic structure of a Python package.
+See next tutorial for an overview of the external files necessary for a Python package.

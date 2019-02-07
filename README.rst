@@ -8,9 +8,10 @@ I also highly recommend using the `Spyder`_ editor when making packages, since i
 For the same reason, using `Anaconda`_ and setting up different environments (like, a development and a testing environment) make it easier to keep package building separated from your usual work.
 This also means, that I refuse to use Jupyter notebooks in this repo, as they are by far the worst way of using Python ever.
 
-Sometimes, I refer in the documentation, comments or READMEs to specific PEPs (or Python Enhancement Proposals).
-These define the specific rules that are associated with certain Pythonic styles (like PEP 8 for code lay-outs or PEP 440 for version identifiers).
-Simply googling them will usually get you to the right page.
+Sometimes, I refer in the documentation, comments or TUTORIALs to specific PEPs (or Python Enhancement Proposals).
+These define the specific rules that are associated with certain Pythonic styles (like :PEP:`8` for code lay-outs or :PEP:`440` for version identifiers).
+They can be checked `here`_.
 
 .. _Spyder: https://www.spyder-ide.org
 .. _Anaconda: https://www.anaconda.com
+.. _here: https://www.python.org/dev/peps
