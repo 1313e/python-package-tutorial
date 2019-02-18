@@ -49,6 +49,7 @@ setup(name='tupy-cas',    # Distribution name of package (e.g., used on PyPI)
       maintainer="1313e",   # PyPI username of maintainer(s)
       description=("TuPy: A tutorial on how to build a Python package"),
       long_description=long_description,        # Use the README description
+      url="https://github.com/1313e/python-package-tutorial",
       license='MIT',    # License of this package
       # List of classifiers (https://pypi.org/pypi?%3Aaction=list_classifiers)
       classifiers=[

@@ -1,6 +1,5 @@
 How does importing in Python works?
 ===================================
-
 Importing Python modules/packages
 ---------------------------------
 When executing the following:
@@ -10,13 +9,16 @@ When executing the following:
 Python will attempt to import a module/package that is called ``tupy``.
 This is done in the following order (if more than one case applies, the first valid case is used and the remaining cases are ignored):
 
+- If the ``tupy`` namespace already exists in the current context, importing is skipped;
 - If the current working directory contains an *importable* directory named ``tupy``, it is imported;
 - Else, if the current working directory contains a Python file named ``tupy.py``, it is imported;
 - If neither of these apply, Python will search the system PATH-variable for a module/package named ``tupy``.
   If it is a package (directory, not file), its name can be different from ``tupy`` as long as it is registered with the correct namespace;
-- If this fails as well, an ``ImportError`` is raised.
+- If this fails as well, it checks if the current working directory contains a directory named ``tupy`` and registers its namespace if so.
+  Because the directory is not importable, only a bare namespace will be available;
+- Finally, if that fails, an ``ImportError`` is raised.
 
-Try changing the names of the ``tupy.py`` file and/or the ``tupy`` directory to the name of an installed package to see this in action.
+Try changing the names of the ``tupy.py``/``tupy/__init__.py`` file and/or the ``tupy`` directory to the name of an installed package to see this in action.
 One can check the path to the imported package with ``>>> tupy.__file__``.
 
 When importing a Python file (either a local or registered file), all code inside this file is executed except for code inside an ``if(__name__ == '__main__')`` statement.
@@ -40,6 +42,7 @@ Here, Python attempts to import an object (anything that can be represented in P
 Determining where ``fib_arr`` is imported from is done in the same way as before, but the namespace itself is not explicitly imported.
 If a valid target has been found, then checking for ``fib_arr`` is done in the following order:
 
+- If ``tupy.fib_arr`` already exists in the current context, importing is skipped but it will be bound to ``fib_arr`` if not bound to it already;
 - If the ``tupy`` namespace contains an object called ``fib_arr``, it is imported;
 - Else, if the ``tupy`` namespace is a Python package (not module) and contains a submodule/subpackage called ``fib_arr``, it is imported;
 - If both of these fail, an ``ImportError`` is raised.

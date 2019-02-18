@@ -9,7 +9,7 @@ For the same reason, using `Anaconda`_ and setting up different environments (li
 This also means, that I refuse to use Jupyter notebooks in this repo, as they are by far the worst way of using Python ever.
 
 Sometimes, I refer in the documentation, comments or TUTORIALs to specific PEPs (or Python Enhancement Proposals).
-These define the specific rules that are associated with certain Pythonic styles (like :PEP:`8` for code lay-outs or :PEP:`440` for version identifiers).
+These define the specific rules that are associated with certain Pythonic styles (like :PEP:`8` for code lay-outs or :PEP:`440` for version identifiers) or additions that have been made to the Python language.
 They can be checked `here`_.
 
 .. _Spyder: https://www.spyder-ide.org

@@ -31,7 +31,9 @@ When creating a Python package, the following files are required or highly recom
   This package is now supplied by default in every Python distribution and therefore does not need to be installed manually (or listed in the requirements).
   See `its documentation`_ for a full rundown of all the arguments that can be used.
   The included ``setup.py`` file shows the default lay-out of a setup-file, but many more arguments can be given.
-  Keep in mind that the lay-out would be much different if the Python package requires C-extensions or different installations depending on machine/architecture/etc;
+  Keep in mind that the lay-out would be much different if the Python package requires C-extensions or different installations depending on machine/architecture/etc.
+  Also, always make sure that a setup.py file must be able to be executed without your package already being installed.
+  Because of this, it is best to only import packages that are guaranteed to be installed on the system (like builtins and those supplied with any Python distribution);
 - And finally, a place to store the version of the package.
   There are also many different ways to store this (and only storing it once).
   I personally prefer to create a ``__version__.py`` file inside the package directory (so, ``tupy/__version__.py``) and executing this file inside the ``setup.py`` file.
