@@ -55,10 +55,9 @@ Any namespaces created during this process, like variables, classes and function
 The namespace of subpackages/submodules is given by its ``__name__`` property, where the name of a Python process is always ``'__main__'``.
 One can use the ``dir()``-function to access a list of everything bound to a given namespace (or, since Python 3, by checking its ``__dir__`` property).
 
-.. note::
-    As described before in ``0_Imports``, namespaces are only imported if they do not already exist in the current context.
-    Therefore, importing a submodule A, which imports a submodule B, which imports submodule A, will not create an infinite recursive loop of imports.
-    Instead, both namespaces are only imported once, where importing submodule A the second time is skipped.
+**Note:** As described before in ``0_Imports``, namespaces are only imported if they do not already exist in the current context.
+Therefore, importing a submodule A, which imports a submodule B, which imports submodule A, will not create an infinite recursive loop of imports.
+Instead, both namespaces are only imported once, where importing submodule A the second time is skipped.
 
 Submodules (and subpackages) have quite a few important dunder attributes, of which some are useful to be modified by the user.
 I give an overview of the most important ones below:
@@ -132,3 +131,5 @@ This includes for example the ``README.rst``, ``requirements.txt`` and ``LICENSE
 Unless there is a good reason not to, it is often a good idea to set the `include_package_data` keyword in the ``setup.py`` file to ``True``.
 This will guarantee that any file that is found inside the top level directory and is not excluded by the ``.gitignore`` file, will be included in the package distribution.
 
+
+In the next tutorial, I will discuss how to structure and document code in a readable way.

@@ -1,5 +1,5 @@
-How does importing in Python works?
-===================================
+How does importing in Python work?
+==================================
 Importing Python modules/packages
 ---------------------------------
 When executing the following:
