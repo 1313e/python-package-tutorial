@@ -129,7 +129,7 @@ Package data
 Package data involves basically every file that is not a dunder file or submodule.
 This includes for example the ``README.rst``, ``requirements.txt`` and ``LICENSE`` files, but also any data or configuration files that are inside the package.
 Unless there is a good reason not to, it is often a good idea to set the `include_package_data` keyword in the ``setup.py`` file to ``True``.
-This will guarantee that any file that is found inside the top level directory and is not excluded by the ``.gitignore`` file, will be included in the package distribution.
+This will guarantee that any file that is found inside the top level directory and is also specified by the ``MANIFEST.in`` file, will be included in the package distribution.
 
 
 In the next tutorial, I will discuss how to structure and document code in a readable way.
