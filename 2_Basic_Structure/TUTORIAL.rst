@@ -56,14 +56,17 @@ The namespace of subpackages/submodules is given by its ``__name__`` property, w
 One can use the ``dir()``-function to access a list of everything bound to a given namespace (or, since Python 3, by checking its ``__dir__`` property).
 
 **Note:** As described before in ``0_Imports``, namespaces are only imported if they do not already exist in the current context.
-Therefore, importing a submodule A, which imports a submodule B, which imports submodule A, will not create an infinite recursive loop of imports.
-Instead, both namespaces are only imported once, where importing submodule A the second time is skipped.
+However, namespaces are only created if they were imported successfully.
+Therefore, importing a submodule A, which imports a submodule B, which imports submodule A, would create an infinite recursive loop of imports.
+However, Python is smart enough to detect that such an infinite loop is going to be created, and simply raises a ``NameError``, telling you that submodule A does not exist (in the current context).
+For this reason, it is advised to make sure that submodules (or subpackages) only import namespaces that do not require the to-be imported namespace.
+If this is unavoidable for some definitions, one can perform such imports inside the function/class definition itself (which will simply grab the namespace and make it locally available).
 
 Submodules (and subpackages) have quite a few important dunder attributes, of which some are useful to be modified by the user.
 I give an overview of the most important ones below:
 
 - ``__all__``: A list of strings with the names of all (accessible) objects that need to be imported if ``from ... import *`` is used.
-  If not set by the user, it automatically contains all object names that do not start with an underscore;
+  If not set by the user, ``from ... import *`` will automatically import all namespaces (including other imported packages) that do not start with an underscore;
 - ``__author__``: Name of the author of this submodule/subpackage, commonly only set for the top level package.
   It does not exist if not set by the user;
 - ``__dict__``: Python dictionary containing ALL objects accessible in this namespace.
@@ -78,11 +81,19 @@ I give an overview of the most important ones below:
 - ``__version__``: Version of this subpackage/submodule, commonly only set for the top level package.
   It does not exist if not set by the user.
 
+In some cases a package can have a submodule that only provides a single definition, like the definition of a large Python class.
+In this case, it is probably not desirable to have the submodule namespace available.
+By giving the submodule a name that has a single leading underscore and importing the definition in the ``__init__.py`` file, you can hide the submodule from the user.
+For example, renaming ``fibo.py`` to ``_fibo.py`` would hide the submodule, but since all of its definitions are already imported, they are still available.
 
 Subpackages
 -----------
 Subpackages are basically the same thing as the package directory itself (e.g., ``tupy`` in this case), except that they are not at the top level, but rather part of a bigger package.
 They are mainly used to give structure to a Python package, avoiding having to put every single submodule in the top level directory.
+Using subpackages and submodules accordingly and properly, can really improve the user experience of your package.
+Having too many subpackages often leads to tedious searching, while not having enough subpackages overloads the user with definitions it does not want or expect.
+It is therefore usually a good idea to think about what you want your user to see when they import your package.
+
 A package that I often look at for structure ideas, is the `NumPy`_ package.
 In NumPy, one can see that for example many base definitions are located in the ``core`` subpackage (``numpy/core``).
 They are however still imported to be accessible at the top level (I will discuss this in a bit), but it makes the overall structure much more readable and clean.
@@ -95,7 +106,7 @@ Its functionality is quite similar to a submodule, except that it usually contai
 Because executing a directory is not possible, importing a subpackage will cause the included ``__init__.py`` file to be executed instead.
 The execution of the ``__init__.py`` proceeds in the exact same way as when a submodule is imported/executed.
 
-When making a subpackage, it is pretty common to import all definitions from all submodules that it has (but not other subpackages).
+When making a subpackage, it is pretty common to import all definitions from all submodules that it has (but not other subpackages), in addition to the submodules themselves (such that they can be added to ``__all__``).
 This allows the user to access these definitions one level higher than where they are actually located.
 A simple example of this is given in the ``tupy/__init__.py`` file, with lines 24 and 28.
 This will cause everything from the ``fibo`` submodule to be imported and added to the ``__all__`` variable of ``tupy``.

@@ -18,7 +18,7 @@ When creating a Python package, the following files are required or highly recom
   This file can also be used as the 'long_description' in the ``setup.py`` file, which allow it to show up on PyPI;
 - A ``requirements.txt`` file, listing all the Python package requirements of this package.
   There are many different ways of listing them, but this is by far the easiest and most common way, since it can be imported into the ``setup.py`` file.
-  Every requirement should be put on a separate line, using no spaces anywhere (see :PEP:`440`).
+  Every requirement should be put on a separate line, using no spaces anywhere (see :PEP:`440` and :PEP:`508`).
   It is advised to always put ALL non-builtin requirements for your package in here, even if one requirement is fullfilled by the other (e.g., ``astropy`` requires ``numpy`` and is therefore installed regardless of your package listing it as a requirement).
   This makes a package more future-proof.
   A package/module is non-builtin if its import path is located in the ``site_packages`` directory;
